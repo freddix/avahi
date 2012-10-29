@@ -1,0 +1,12 @@
+diff -aurN avahi-0.6.28.orig/avahi-discover-standalone/main.c avahi-0.6.28/avahi-discover-standalone/main.c
+--- avahi-0.6.28.orig/avahi-discover-standalone/main.c	2011-01-26 21:34:32.000000000 +0100
++++ avahi-0.6.28/avahi-discover-standalone/main.c	2011-01-26 21:35:14.000000000 +0100
+@@ -330,7 +330,7 @@
+     poll_api = avahi_glib_poll_new(NULL, G_PRIORITY_DEFAULT);
+ 
+     ui = gtk_builder_new();
+-    gtk_builder_add_from_file(ui, AVAHI_INTERFACES_DIR"avahi-discover.ui", NULL);
++    gtk_builder_add_from_file(ui, AVAHI_INTERFACES_DIR"avahi-discover-standalone.ui", NULL);
+     main_window = GTK_WIDGET(gtk_builder_get_object(ui, "main_window"));
+     g_signal_connect(main_window, "delete-event", (GCallback) main_window_on_delete_event, NULL);
+ 

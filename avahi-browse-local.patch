@@ -1,0 +1,12 @@
+diff -aurN avahi-0.6.21.orig/avahi-daemon/avahi-daemon.conf avahi-0.6.21/avahi-daemon/avahi-daemon.conf
+--- avahi-0.6.21.orig/avahi-daemon/avahi-daemon.conf	2007-05-09 00:51:01.000000000 +0200
++++ avahi-0.6.21/avahi-daemon/avahi-daemon.conf	2007-08-27 18:24:36.000000000 +0200
+@@ -23,7 +23,7 @@
+ [server]
+ #host-name=foo
+ #domain-name=local
+-browse-domains=0pointer.de, zeroconf.org
++browse-domains=local
+ use-ipv4=yes
+ use-ipv6=no
+ #check-response-ttl=no
