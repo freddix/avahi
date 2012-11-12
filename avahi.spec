@@ -1,7 +1,7 @@
 Summary:	Free mDNS/DNS-SD implementation
 Name:		avahi
 Version:	0.6.31
-Release:	11
+Release:	12
 License:	GPL v.2/LGPL
 Group:		Applications
 Source0:	http://avahi.org/download/%{name}-%{version}.tar.gz
@@ -34,6 +34,7 @@ BuildRequires:	xmltoman
 Requires(post,preun,postun):	systemd-units
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	dbus
+Suggests:	nss-mdns
 Provides:	group(avahi)
 Provides:	user(avahi)
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
