@@ -107,6 +107,7 @@ This is the package containing the header files for Avahi library.
 Summary:	Header files for Avahi ui library
 Group:		Development/Libraries
 Requires:	%{name}-glib-devel = %{version}-%{release}
+Requires:	%{name}-ui-devel = %{version}-%{release}
 Requires:	%{name}-ui-gtk3-libs = %{version}-%{release}
 
 %description ui-gtk3-devel
