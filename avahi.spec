@@ -1,7 +1,7 @@
 Summary:	Free mDNS/DNS-SD implementation
 Name:		avahi
 Version:	0.6.31
-Release:	12
+Release:	13
 License:	GPL v.2/LGPL
 Group:		Applications
 Source0:	http://avahi.org/download/%{name}-%{version}.tar.gz
@@ -190,6 +190,8 @@ Command line utilities using avahi-client.
 %patch4 -p1
 %patch5 -p1
 
+%{__sed} 's|-DG[^ ]*_DISABLE_DEPRECATED=1||g' -i avahi-ui/Makefile.am
+
 %build
 %{__intltoolize}
 %{__libtoolize}
@@ -203,7 +205,7 @@ Command line utilities using avahi-client.
 	--disable-qt3		\
 	--disable-qt4		\
 	--disable-silent-rules	\
-    	--disable-static 	\
+	--disable-static 	\
 	--with-autoipd-group=avahi		\
 	--with-autoipd-user=avahi		\
 	--with-avahi-priv-access-group=avahi	\
@@ -226,7 +228,8 @@ cp $RPM_BUILD_ROOT%{_datadir}/%{name}/interfaces/{avahi-discover,avahi-discover-
 
 %py_postclean
 
-rm -rf $RPM_BUILD_ROOT%{_datadir}/locale/{en_NZ,sr@latin}
+%{__rm} -r $RPM_BUILD_ROOT%{_datadir}/locale/{en_NZ,sr@latin}
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %find_lang %{name}
 
